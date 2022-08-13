@@ -1,0 +1,17 @@
+{
+  "name": "Api_Disney_IEL2022",
+  "version": "1.0.0",
+  "description": "api desenvolvida para teste pratico IEL 2022",
+  "main": "index.js",
+  "author": "Ramon Dourado Barbosa",
+  "license": "MIT",
+  "scripts": {
+    "start":"node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
+  }
+}
