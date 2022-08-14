@@ -1,6 +1,6 @@
 const { response } = require("express");
-const checkJsonField = require("./checkJsonField")
-const filterFieldService = require("./filterFieldService")
+
+const filterFieldService = require("./filterSpecificField")
 
 /**
  * funcao recebe os os dados e retorna 
@@ -9,7 +9,7 @@ const filterFieldService = require("./filterFieldService")
  * @return um novo objeto ja filtrado 
  * 
  */
-module.exports = function searchMoviesForfield(DataBase, field,values) {
+module.exports = function searchForfield(DataBase, field,values) {
     if(!field || !values ){
        return DataBase;
     }

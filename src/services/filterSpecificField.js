@@ -6,7 +6,7 @@
  * @param  fieldsForFilter campo a ser filtrado
  * @return array contendo o campo solicitado e respectivos valores encontrados em todos objetos
  */
-module.exports = function filterExpecificField(Data,fieldsForFilter){
+module.exports = function filterSpecificField(Data,fieldsForFilter){
            
     
     if(fieldsForFilter!= undefined||null){
@@ -18,9 +18,6 @@ module.exports = function filterExpecificField(Data,fieldsForFilter){
         return values;
         }
         
-
-
-
         return Data;
 
 

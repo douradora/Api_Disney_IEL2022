@@ -1,18 +1,15 @@
 
 
 
-const Router = require("express")
+const Router = require("express");
+const filterController = require("./controller/FilterController");
 
 
 const route = Router();
 
 
-route.get('/filters',(req,res)=>{
-    res.send({message:"retornou filtro"})
-})
-route.get('/movies',(req,res)=>{
-    res.send({message:"retornou movies"})
-})
+route.get('/filters', new filterController().hanleYearsAndGende);
+route.get('/movies',new filterController().handleMoviesSeache);
 
 
 module.exports=route;

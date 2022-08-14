@@ -1,6 +1,6 @@
-    const listarFilmes = require('../src/services/filterFieldService');
-    const database = require('../src/database/disney_movies.json');
-const searchMovies = require('../src/services/searchMovies');
+const listarFilmes = require('../src/services/filterSpecificField');
+const database = require('../src/database/disney_movies.json');
+const searchMovies = require('../src/services/seachForField');
 
 
 
@@ -53,14 +53,13 @@ expect(lista).toContain("Adventure")
  
 test("consultar campos",()=>{
 
- const seacher = {"genre": "Adventure",}
-    
-
-const movies = searchMovies(database,seacher)
 
 
+const movies = searchMovies(database,"movie_title","101 Dalmatians")
 
-console.table(movies)
+
+expect(movies.length !=0).toBe(true);
+
 
 
 

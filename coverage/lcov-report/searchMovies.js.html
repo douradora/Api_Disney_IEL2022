@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">67.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/32</span>
+                <span class='fraction'>25/37</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">67.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/32</span>
+                <span class='fraction'>25/37</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,12 +94,12 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -117,16 +117,26 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">579x</span>
-<span class="cline-any cline-yes">579x</span>
-<span class="cline-any cline-yes">579x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">579x</span>
+<span class="cline-any cline-yes">579x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const { response } = require("express");
-const checkJsonField = require("./checkJsonField")
+&nbsp;
 const filterFieldService = require("./filterFieldService")
 &nbsp;
 /**
@@ -136,34 +146,39 @@ const filterFieldService = require("./filterFieldService")
  * @return um novo objeto ja filtrado 
  * 
  */
-module.exports = function searchMovies(Data, fieldForFilter) {
-    const field = Object.keys(fieldForFilter)[0];
-    const values = Object.values(fieldForFilter)[0]
-&nbsp;
-    const isField = checkJsonField(Data[0], field);
-&nbsp;
-    if (!isField) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error("nao existe o campo no json")</span>
+module.exports = function searchMoviesForfield(DataBase, field,values) {
+    if(!field || !values )<span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >       return DataBase;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-&nbsp;
-    const result = Data.filter((movies) =&gt; {
-        return movies[field] === values;
-&nbsp;
-    })
-&nbsp;
-&nbsp;
-&nbsp;
-    return result;
-&nbsp;
-}</pre></td></tr></table></pre>
+    const splitValues = values.split(',');
+  
+    if(field==="release_date")<span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      const resultDate = DataBase.filter(objetos=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        return splitValues.find((value)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >         const data =new Date(objetos["release_date"]).getFullYear();</span>
+<span class="cstat-no" title="statement not covered" >           </span>
+<span class="cstat-no" title="statement not covered" >          return value==data})</span>
+<span class="cstat-no" title="statement not covered" >      })</span>
+<span class="cstat-no" title="statement not covered" >       </span>
+<span class="cstat-no" title="statement not covered" >        return resultDate;</span>
+<span class="cstat-no" title="statement not covered" >  </span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  
+  
+   const result = DataBase.filter(objetos=&gt;{
+          return splitValues.find((value)=&gt;value==objetos[field])
+        })
+  
+        return result;
+  
+  }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-14T17:19:22.407Z
+                at 2022-08-14T19:46:35.186Z
             </div>
         <script src="prettify.js"></script>
         <script>
