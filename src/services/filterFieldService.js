@@ -1,15 +1,27 @@
 
 
-I/**
- *  funcao recebe dado a ser filtrado, e retorna todos os valores encontrado no referido campo,
- *  sem repetiçao
+/**
+ *  funcao recebe dado a ser filtrado, e retorna todos os valores encontrado no referido campo
  * @param  Data  dado a ser filtrado
- * @param  fieldsForFilter array contendo os nomes campos existente no objetos que devem ser discriminado
- * @return array contendo os campos solicitados e respectivos valores encontrados em todos objetos
+ * @param  fieldsForFilter campo a ser filtrado
+ * @return array contendo o campo solicitado e respectivos valores encontrados em todos objetos
  */
-module.exports = function filterData(Data,fieldsForFilter){
+module.exports = function filterExpecificField(Data,fieldsForFilter){
+           
+    
+    if(fieldsForFilter!= undefined||null){
+        const values = Data.map((movie)=>{
+                return movie[fieldsForFilter];
+
+            })
+
+        return values;
+        }
         
 
+
+
+        return Data;
 
 
 

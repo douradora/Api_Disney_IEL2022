@@ -6,12 +6,15 @@
   "author": "Ramon Dourado Barbosa",
   "license": "MIT",
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.18.1"
   },
   "devDependencies": {
-    "cors": "^2.8.5"
+    "@types/jest": "^28.1.6",
+    "cors": "^2.8.5",
+    "jest": "^28.1.3"
   }
 }
