@@ -9,7 +9,7 @@ const route = Router();
 
 
 route.get('/filters', new filterController().hanleYearsAndGende);
-route.get('/movies',new filterController().handleMoviesSeache);
+route.get('/movies', new filterController().handleMoviesSeache);
 
 
-module.exports=route;
+module.exports = route;

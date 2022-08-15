@@ -9,29 +9,30 @@ const filterFieldService = require("./filterSpecificField")
  * @return um novo objeto ja filtrado 
  * 
  */
-module.exports = function searchForfield(DataBase, field,values) {
-    if(!field || !values ){
-       return DataBase;
-    }
-    const splitValues = values.split(',');
-  
-    if(field==="release_date"){
-      const resultDate = DataBase.filter(objetos=>{
-        return splitValues.find((value)=>{
-         const data =new Date(objetos["release_date"]).getFullYear();
-           
-          return value==data})
-      })
-       
-        return resultDate;
-  
-    }
-  
-  
-   const result = DataBase.filter(objetos=>{
-          return splitValues.find((value)=>value==objetos[field])
-        })
-  
-        return result;
-  
+module.exports = function searchForfield(DataBase, field, values) {
+  if (!field || !values) {
+    return DataBase;
   }
+  const splitValues = values.split(',');
+
+  if (field === "release_date") {
+    const resultDate = DataBase.filter(objetos => {
+      return splitValues.find((value) => {
+        const data = new Date(objetos["release_date"]).getFullYear();
+
+        return value == data
+      })
+    })
+
+    return resultDate;
+
+  }
+
+
+  const result = DataBase.filter(objetos => {
+    return splitValues.find((value) => value == objetos[field])
+  })
+
+  return result;
+
+}

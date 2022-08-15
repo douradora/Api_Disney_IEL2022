@@ -36,14 +36,14 @@ module.exports = class filterController {
                 message: "consulte o manual da api para requisiçao correta"
             })
         }
-        const { genre, years} = filter;
+        const { genre, years } = filter;
 
-        const fieldFilterGenre = new seachForField(movies,'genre',genre);
-        const fieldFilterYears = new seachForField(fieldFilterGenre,"release_date",years);
+        const fieldFilterGenre = new seachForField(movies, 'genre', genre);
+        const fieldFilterYears = new seachForField(fieldFilterGenre, "release_date", years);
 
-        res.json({movies:fieldFilterYears});
+        res.json({ movies: fieldFilterYears });
 
-        
+
 
 
 
