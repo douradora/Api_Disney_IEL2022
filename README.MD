@@ -33,11 +33,11 @@
         {
       
          "filter":{
-                    "genre":""
-                    "years":""
+                    "genre":" "
+                    "years":" "
                   }
          }
          
-   Apenas o campo filter é obrigatorio,podendo ser deixado com chaves vazias,se nao for enviado retornara um erro. 
+   Apenas os campos são obrigatorio,podendo ser deixado com chaves vazias,se nao for enviado retornara um erro ou nenhum dado retornará. 
   
   
