@@ -6,7 +6,7 @@
   "author": "Ramon Dourado Barbosa",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node ./src/index.js",
     "test": "jest"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "@types/jest": "^28.1.6",
     "cors": "^2.8.5",
     "jest": "^28.1.3",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
   }
 }

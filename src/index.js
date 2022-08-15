@@ -1,6 +1,6 @@
 const express = require("express");
 const cors =require("cors")
-const route= require("./src/routes");
+const route= require("./routes");
 
 const app = express();
 
@@ -26,3 +26,4 @@ app.use((err,req,res,next)=>{
 })
 app.listen(PORT,()=>console.log(`server is running http://localhost:${PORT}`));
 
+module.exports =app;
