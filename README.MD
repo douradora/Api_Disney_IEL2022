@@ -4,7 +4,7 @@
 
 # Sobre
   Api desenvolvida como parte do desafio tecnico proposto pelo IEL/BA , para o Programa de Bolsa Inova Talentos Bahia.
-  A Api consiste em dois endpoits.que retornam dados extraído de um arquivo .json, contendo catalogos de filmes da Disney;
+  A Api consiste em dois endpoints.que retornam dados extraído de um arquivo .json, contendo catalogos de filmes da Disney;
 
 # Pre-Requisitos(para teste)
   * node js  versão :^16.16.0
@@ -19,9 +19,9 @@
     
     -yarn install  
     
-  Após a instalação execute o yarn start  ou npm start no terminal; 
+  Após a instalação execute o **yarn start**  ou **npm start** no terminal; 
   
-  pelo progama  Insomnia ou Postman use as seguintes URL:
+  pelo programa  Insomnia ou Postman use as seguintes URL:
   
     http://localhost:8000/filters
   
