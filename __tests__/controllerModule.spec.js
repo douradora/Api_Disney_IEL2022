@@ -32,12 +32,12 @@ const app =require("../src/index");
 
   const dados =reponse.body['movies'].find(element => {
            const data = new  Date(element.release_date).getFullYear();
-            return data != 2003 & data !=2005 &  element.genre!= "Musical" 
+            return data != 2004 & data !=2005 &  element.genre!= "Drama" 
             
             
   });
 
-  console.log(dados)
+
   expect(dados).toBe(undefined)
   
  })

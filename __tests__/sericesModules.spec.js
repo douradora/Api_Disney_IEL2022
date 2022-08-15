@@ -43,7 +43,7 @@ test("ver o numero correto de  objetos retorna",()=>{
 const lista = listarFilmes(database,'genre');
 
 
-expect(lista).toContain("Adventure")
+expect(lista.length).toBe(database.length)
 
 
 
