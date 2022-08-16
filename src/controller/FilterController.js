@@ -11,15 +11,16 @@ module.exports = class filterController {
         const filterGenre = filterSpecificField(Database, "genre");
 
         const formateDate = filterYears.map((year) => {
-            return new Date(year).getFullYear();
+            return new Date(year).getFullYear().toString();
         })
 
         const noRepeatDate = [...new Set(formateDate)];
         const noRepeatGenre = [...new Set(filterGenre)];
 
-        const removeEmptyFields = noRepeatGenre.filter(value => value !== "");
-
-        res.status(200).json({ years: noRepeatDate, genre: removeEmptyFields })
+        const removeEmptyFieldsDate = noRepeatDate.filter(value => !isNaN(value));
+        const removeEmptyFieldsGenre = noRepeatGenre.filter(value => value !== "");
+      
+        res.status(200).json({ years: removeEmptyFieldsDate, genre: removeEmptyFieldsGenre })
 
 
 
